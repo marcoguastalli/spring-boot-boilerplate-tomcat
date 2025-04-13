@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!-- ====================================================================== -->
+	<!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
+	<!--                                                                        -->
+	<!-- http://start.spring.io/                                                -->
+	<!-- http://spring.io/projects/spring-boot                                  -->
+	<!--                                                                        -->
+	<!-- ====================================================================== -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.0.6</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T  D E S C R I P T I O N                                   -->
+	<!-- ====================================================================== -->
+	<name>Spring Boot Boilerplate Tomcat</name>
+	<description>Spring Boot Boilerplate Tomcat for Spring Boot MicroService</description>
+	<groupId>net.marco27.java.boilerplate</groupId>
+	<artifactId>spring-boot-boilerplate-tomcat</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<!-- ====================================================================== -->
+	<!-- P R O J E C T  P R O P E R T I E S                                     -->
+	<!-- ====================================================================== -->
+	<properties>
+		<java.version>21</java.version>
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
+		<springdoc.openapi.starter.webmvc.ui.version>2.0.4</springdoc.openapi.starter.webmvc.ui.version>
+		<!-- https://central.sonatype.com/artifact/org.projectlombok/lombok -->
+		<lombok.version>1.18.38</lombok.version>
+		<!-- https://github.com/revelc/formatter-maven-plugin -->
+		<formatter.maven.plugin.version>2.26.9</formatter.maven.plugin.version>
+	</properties>
+	<!-- ====================================================================== -->
+	<!-- R E P O S I T O R I E S                                                -->
+	<!-- ====================================================================== -->
+	<pluginRepositories>
+		<pluginRepository>
+			<id>repository.spring.release</id>
+			<name>Spring GA Repository</name>
+			<url>https://repo.spring.io/plugins-release/</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<repositories>
+		<repository>
+			<id>repository.spring.milestone</id>
+			<name>Spring Milestone Repository</name>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
+	<!-- ====================================================================== -->
+	<!-- D E P E N D E N C I E S -->
+	<!-- ====================================================================== -->
+	<dependencies>
+		<!-- Spring Boot Web using Apache Tomcat -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- JUnit -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Mocks -->
+		<dependency>
+			<groupId>org.springframework.restdocs</groupId>
+			<artifactId>spring-restdocs-mockmvc</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Hamcrest Assertions http://hamcrest.org/JavaHamcrest/javadoc -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://projectlombok.org/ -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
+		<!-- Spring Doc OpenAPI -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc.openapi.starter.webmvc.ui.version}</version>
+		</dependency>
+		<!-- Spring Annotation Processor https://docs.spring.io/spring-boot/docs/current/reference/html/configuration-metadata.html#appendix.configuration-metadata.annotati -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!-- Actuator https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.endpoints -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+	</dependencies>
+	<!-- ====================================================================== -->
+	<!-- B U I L D   D E F I N I T I O N                                        -->
+	<!-- ====================================================================== -->
+	<build>
+		<plugins>
+			<!-- https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/ -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- https://github.com/revelc/formatter-maven-plugin plugin to format java source files -->
+			<plugin>
+				<groupId>net.revelc.code.formatter</groupId>
+				<artifactId>formatter-maven-plugin</artifactId>
+				<version>${formatter.maven.plugin.version}</version>
+				<configuration>
+					<directories>
+						<directory>${project.build.sourceDirectory}</directory>
+						<directory>${project.build.directory}/generated-sources</directory>
+					</directories>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
