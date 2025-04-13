@@ -22,7 +22,7 @@
 	<description>Spring Boot Boilerplate Tomcat for Spring Boot MicroService</description>
 	<groupId>net.marco27.java.boilerplate</groupId>
 	<artifactId>spring-boot-boilerplate-tomcat</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<!-- ====================================================================== -->
 	<!-- P R O J E C T  P R O P E R T I E S                                     -->
 	<!-- ====================================================================== -->
