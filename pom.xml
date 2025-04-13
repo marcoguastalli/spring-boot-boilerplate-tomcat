@@ -127,4 +127,14 @@
 			</plugin>
 		</plugins>
 	</build>
+	<!-- ====================================================================== -->
+	<!-- R E L E A S E  -  mvn deploy                                           -->
+	<!-- ====================================================================== -->
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub OWNER Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/marcoguastalli/spring-boot-boilerplate-tomcat</url>
+		</repository>
+	</distributionManagement>
 </project>
