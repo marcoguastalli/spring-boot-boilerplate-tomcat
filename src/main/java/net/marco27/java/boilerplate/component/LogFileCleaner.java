@@ -17,9 +17,7 @@ public class LogFileCleaner {
     @PostConstruct
     public void deleteLogFile() throws IOException {
         try (var dirStream = Files.walk(Paths.get(LOGS_FOLDER))) {
-            dirStream.filter(Files::isRegularFile)
-                    .map(Path::toFile)
-                    .filter(file -> !file.isHidden())
+            dirStream.filter(Files::isRegularFile).map(Path::toFile).filter(file -> !file.isHidden())
                     .forEach(File::deleteOnExit);
         }
     }

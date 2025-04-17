@@ -25,18 +25,18 @@ public class AppExceptionHandlerController extends ResponseEntityExceptionHandle
         return ResponseEntity.status(status).body(e.getMessage());
     }
 
-    @ExceptionHandler({IllegalArgumentException.class})
+    @ExceptionHandler({ IllegalArgumentException.class })
     public ResponseEntity<String> handleNotFoundException(@NotNull IllegalArgumentException e) {
         return handleError(BAD_REQUEST, e);
     }
 
-    @ExceptionHandler({ConnectionException.class})
+    @ExceptionHandler({ ConnectionException.class })
     public ResponseEntity<String> handleContributorsApiConnectionException(@NotNull ConnectionException e) {
         return handleError(INTERNAL_SERVER_ERROR, e);
     }
 
     @ResponseStatus(NOT_FOUND)
-    @ExceptionHandler({DocumentNotFoundException.class})
+    @ExceptionHandler({ DocumentNotFoundException.class })
     public void handle(@NotNull DocumentNotFoundException e) {
         log.error("Document not found: ", e);
     }
